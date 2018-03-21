@@ -18,7 +18,8 @@ class HearstPatterns(object):
         self.__hearst_patterns = [
                 ("(NP_\w+ (, )?such as (NP_\w+ ? (, )?(and |or )?)+)", "first"),
 
-                ''' IMPLEMENT ADDITIONAL HEARST PATTERNS HERE '''
+
+               # ''' IMPLEMENT ADDITIONAL HEARST PATTERNS HERE '''
             ]
 
         if extended:
