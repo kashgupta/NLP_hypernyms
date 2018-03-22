@@ -30,6 +30,20 @@ def extractRelevantPaths(wikideppaths, wordpairs_labels, outputfile):
             lines_read += 1
 
             word1, word2, deppath = line.split("\t")
+            if (word1, word2) in wordpairs_labels:
+                if wordpairs_labels[(word1, word2)]:
+                    if deppath + "\tFORWARD" in relevantDepPaths2counts:
+                        relevantDepPaths2counts[deppath + "\tFORWARD"] += 1
+                    else:
+                        relevantDepPaths2counts[deppath + "\tFORWARD"] = 1
+            if (word2, word1) in wordpairs_labels:
+                if wordpairs_labels[(word2, word1)]:
+                    if deppath + "\tBACKWARD" in relevantDepPaths2counts:
+                        relevantDepPaths2counts[deppath + "\tBACKWARD"] += 1
+                    else:
+                        relevantDepPaths2counts[deppath + "\tBACKWARD"] = 1
+
+
 
             '''
                 IMPLEMENT METHOD TO EXTRACT RELEVANT DEPEDENCY PATHS HERE
@@ -45,7 +59,7 @@ def extractRelevantPaths(wikideppaths, wordpairs_labels, outputfile):
 
     with open(outputfile, 'w') as f:
         for dep_path in relevantDepPaths2counts:
-            if relevantDepPaths2counts[dep_path] > 0:
+            if relevantDepPaths2counts[dep_path] > 1:
                 f.write(dep_path)
                 f.write('\n')
 
