@@ -59,7 +59,7 @@ def extractRelevantPaths(wikideppaths, wordpairs_labels, outputfile):
 
     with open(outputfile, 'w') as f:
         for dep_path in relevantDepPaths2counts:
-            if relevantDepPaths2counts[dep_path] > 1:
+            if relevantDepPaths2counts[dep_path] >= 2u:
                 f.write(dep_path)
                 f.write('\n')
 
