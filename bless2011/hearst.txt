@@ -1,4 +1,4 @@
-alligator	beast	False
+ healligator	beast	False
 alligator	carnivore	False
 alligator	creature	False
 alligator	predator	False
@@ -171,7 +171,7 @@ falcon	vulture	False
 falcon	woodpecker	False
 falcon	bird	True
 falcon	creature	False
-falcon	predator	False
+falcon	predator	True
 falcon	beak	False
 falcon	claw	False
 falcon	eye	False
@@ -290,7 +290,7 @@ vulture	goose	False
 vulture	hawk	False
 vulture	swan	False
 vulture	woodpecker	False
-vulture	bird	False
+vulture	bird	True
 vulture	creature	False
 vulture	predator	False
 vulture	beak	False
@@ -1420,7 +1420,7 @@ coyote	beast	False
 coyote	carnivore	False
 coyote	creature	False
 coyote	mammal	True
-coyote	predator	False
+coyote	predator	True
 coyote	eye	False
 coyote	fur	False
 coyote	mouth	False
@@ -1508,7 +1508,7 @@ fox	beast	False
 fox	carnivore	False
 fox	creature	False
 fox	mammal	False
-fox	predator	False
+fox	predator	True
 fox	eye	False
 fox	fur	False
 fox	mouth	False
@@ -2534,7 +2534,7 @@ cypress	crown	False
 cypress	needle	False
 cypress	stump	False
 cypress	treetop	False
-cypress	wood	False
+cypress	wood	True
 cypress	French-language	False
 cypress	X-ray	False
 cypress	asphalt	False
@@ -2966,7 +2966,7 @@ motorcycle	truck	False
 motorcycle	van	False
 motorcycle	yacht	False
 motorcycle	conveyance	False
-motorcycle	transport	False
+motorcycle	transport	True
 motorcycle	accelerator	False
 motorcycle	back	False
 motorcycle	brake	False

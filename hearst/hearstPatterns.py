@@ -31,6 +31,14 @@ class HearstPatterns(object):
             ("(NP_\w+ (, )?especially (NP_\w+ ? (, )?(and |or )?)+)", "first"),
             ("(NP_\w+ (, )?are (NP_\w+ ? (, )?(and |or )?)+)", "first"),
             ("(NP_\w+ (, )?is (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?for instance (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?for example (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?namely (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?especially (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?i.e. (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?one of (NP_\w+ ?(, )?(and |or )?)+)", "last"),
+            ("(NP_\w+ (, )?last of (NP_\w+ ?(, )?(and |or )?)+)", "last"),
+            ("(NP_\w+ (, )?first of (NP_\w+ ?(, )?(and |or )?)+)", "last"),
             ]
 
         if extended:
