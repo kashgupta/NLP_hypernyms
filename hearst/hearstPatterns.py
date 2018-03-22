@@ -19,7 +19,18 @@ class HearstPatterns(object):
             ("(NP_\w+ (, )?such as (NP_\w+ ? (, )?(and |or )?)+)", "first"),
             ("(NP_\w+ (, )?like (NP_\w+ ? (, )?(and |or )?)+)", "first"),
             ("((NP_\w+ ?(, )?)+(and |or )?is a NP_\w+)", "last"),
-            ("((NP_\w+ ?(, )?)+(and |or )?was a NP_\w+)", "last")
+            ("((NP_\w+ ?(, )?)+(and |or )?was a NP_\w+)", "last"),
+            ("(NP_\w+ (, )?e.g. (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?including (NP_\w+ ?(, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?sort of (NP_\w+ ?(, )?(and |or )?)+)", "last"),
+            ("(NP_\w+ (, )?amongst (NP_\w+ ?(, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?is an example of (NP_\w+ ?(, )?(and |or )?)+)", "last"),
+            ("(NP_\w+ (, )?are examples of (NP_\w+ ?(, )?(and |or )?)+)", "last"),
+            ("(NP_\w+ (, )?except (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?primarily (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?especially (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?are (NP_\w+ ? (, )?(and |or )?)+)", "first"),
+            ("(NP_\w+ (, )?is (NP_\w+ ? (, )?(and |or )?)+)", "first"),
             ]
 
         if extended:
