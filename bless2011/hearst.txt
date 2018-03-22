@@ -1,4 +1,4 @@
- healligator	beast	False
+alligator	beast	False
 alligator	carnivore	False
 alligator	creature	False
 alligator	predator	False
