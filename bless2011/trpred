@@ -95,7 +95,7 @@ screwdriver	allowance	False
 pear	cranberry	False
 phone	dishwasher	False
 television	intolerance	False
-salmon	food	False
+salmon	food	True
 missile	swimming-pool	False
 phone	artillery	False
 hammer	midfielders	False
@@ -767,7 +767,7 @@ couch	leg	False
 beet	garlic	False
 fork	chisel	False
 gorilla	function	False
-corn	cereal	False
+corn	cereal	True
 toaster	element	False
 cat	fracas	False
 wardrobe	ignorance	False
@@ -1065,7 +1065,7 @@ owl	vertebrate	False
 missile	warhead	False
 penguin	rump	False
 battleship	camel	False
-hospital	office	False
+hospital	office	True
 pine	cholesterol	False
 bus	diesel	False
 cucumber	sacrament	False
@@ -1228,7 +1228,7 @@ villa	roof	False
 sieve	glass	False
 hotel	Ms	False
 donkey	read	False
-cranberry	food	False
+cranberry	food	True
 tuna	coursework	False
 villa	rug	False
 phone	turmoil	False
@@ -1661,7 +1661,7 @@ frigate	galley	False
 oven	trust	False
 beet	turnip	False
 castle	date	False
-willow	poplar	False
+willow	poplar	True
 deer	flesh	False
 celery	leaf	False
 sieve	magnetization	False
@@ -1780,10 +1780,10 @@ cod	gill	False
 cloak	clothing	False
 wardrobe	shelf	False
 mackerel	pity	False
-rifle	device	False
+rifle	device	True
 cat	jaguar	False
 train	door	False
-frog	animal	False
+frog	animal	True
 acacia	pine	False
 screwdriver	dancing	False
 cathedral	penny	False
@@ -1832,7 +1832,7 @@ pineapple	papaya	False
 hammer	ring	False
 grenade	Jew	False
 rabbit	pig	False
-cat	animal	False
+cat	animal	True
 washer	hovercraft	False
 washer	plug	False
 dagger	billy	False
@@ -1871,7 +1871,7 @@ grenade	arm	False
 lion	scandal	False
 dresser	watchtower	False
 garlic	sevens	False
-turtle	animal	False
+turtle	animal	True
 snake	loan	False
 poplar	leaf	False
 missile	ediff-merge-with-ancestor	False
@@ -2061,7 +2061,7 @@ spinach	food	False
 pine	drabness	False
 parsley	principle	False
 bus	fuel	False
-garlic	spice	False
+garlic	spice	True
 donkey	withers	False
 corn	head	False
 grenade	grip	False
@@ -2163,7 +2163,7 @@ pig	pattern	False
 bowl	manuscript	False
 bear	litter	False
 lizard	turtle	False
-cod	fish	False
+cod	fish	True
 car	driver	False
 catfish	electrolyte	False
 pigeon	hello	False
@@ -2247,7 +2247,7 @@ robe	abuse	False
 cathedral	bench	False
 television	approach	False
 rifle	handle	False
-axe	tool	False
+axe	tool	True
 lizard	frog	False
 gorilla	rabbit	False
 trout	Presbyterian	False
@@ -2770,7 +2770,7 @@ screwdriver	oratory	False
 goldfish	head	False
 toaster	engine	False
 penguin	lifter	False
-catfish	fish	False
+catfish	fish	True
 couch	coach	False
 hornet	moth	False
 jacket	tail	False
@@ -2996,7 +2996,7 @@ robe	something	False
 bottle	vessel	False
 ambulance	gasoline	False
 hammer	mort	False
-beet	food	False
+beet	food	True
 owl	pheasant	False
 train	point	False
 hotel	door	False
@@ -3020,7 +3020,7 @@ screwdriver	nutcracker	False
 dove	foot	False
 cat	dog	False
 trout	rider	False
-acacia	tree	False
+acacia	tree	True
 mackerel	gill	False
 frigate	gun	False
 donkey	deer	False
