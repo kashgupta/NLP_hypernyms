@@ -16,15 +16,14 @@ class HearstPatterns(object):
         # format is <hearst-pattern>, <hypernym_location>
         # so, what this means is that if you apply the first pattern,
         self.__hearst_patterns = [
-                ("(NP_\w+ (, )?such as (NP_\w+ ? (, )?(and |or )?)+)", "first")
-
+            ("(NP_\w+ (, )?such as (NP_\w+ ? (, )?(and |or )?)+)", "first")
                # ''' IMPLEMENT ADDITIONAL HEARST PATTERNS HERE '''
             ]
 
         if extended:
             self.__hearst_patterns.extend([
                 ("(NP_\w+ (, )?such as (NP_\w+ ? (, )?(and |or )?)+)", "first"),
-                ''' IMPLEMENT ADDITIONAL PATTERNS HERE '''
+                #''' IMPLEMENT ADDITIONAL PATTERNS HERE '''
             ])
 
         self.__pos_tagger = PerceptronTagger()
