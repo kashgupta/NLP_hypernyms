@@ -83,7 +83,7 @@ snake	lizard	False
 frog	blood	False
 toaster	stereo	False
 car	quotation	False
-elm	tree	True
+elm	tree	False
 tuna	tail	False
 car	board	False
 dove	rump	False
@@ -113,7 +113,7 @@ bear	gorilla	False
 dolphin	airplay	False
 giraffe	hoof	False
 phone	man	False
-couch	furniture	True
+couch	furniture	False
 lizard	blood	False
 dolphin	rabbit	False
 acacia	live	False
@@ -137,7 +137,7 @@ castle	racing	False
 parsley	spinach	False
 bag	colour	False
 guitar	pickup	False
-rifle	arm	True
+rifle	arm	False
 stereo	refrigerator	False
 turtle	th	False
 jacket	robe	False
