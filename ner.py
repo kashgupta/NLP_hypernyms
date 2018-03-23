@@ -5,6 +5,7 @@ from sklearn.neural_network import MLPClassifier
 import re
 #from syllables import count_syllables
 from sklearn.metrics import precision_recall_fscore_support
+from gensim.models import KeyedVectors
 
 # Assignment 7: NER
 # This is just to help you get going. Feel free to
@@ -23,9 +24,23 @@ def getfeats(triplet):
 
 if __name__ == "__main__":
     # Load the training data
+
+    vecfile = 'GoogleNews-vectors-negative300.bin'
+    vecs = KeyedVectors.load_word2vec_format(vec    file, binary=True)
+
     with open('bless2011/data_lex_train.tsv', 'r') as f:
         inputlines = f.read().strip().split('\n')
+
+    with open('bless2011/data_lex_val.tsv', 'r') as f:
+        vallines = f.read().strip().split('\n')
+
+    with open('bless2011/data_lex_test.tsv', 'r') as f:
+        testlines = f.read().strip().split('\n')
+
+
     inputlines = [[s.split("\t")] for s in inputlines]
+    vallines = [[s.split("\t")] for s in vallines]
+    testlines = [[s.split("\t")] for s in testlines]
     #train_lines = open('data')
     #dev_sents = list(conll2002.iob_sents('esp.testa'))
     #test_sents = list(conll2002.iob_sents('esp.testb'))
@@ -51,11 +66,10 @@ if __name__ == "__main__":
     test_labels = []
 
     # switch to test_sents for your final results
-    for sent in dev_sents:
-        for i in range(len(sent)):
-            feats = word2features(sent,i)
-            test_feats.append(feats)
-            test_labels.append(sent[i][-1])
+    for triplet in vallines:
+        feats = getfeats(triplet)
+        test_feats.append(feats)
+        test_labels.append(triplet[2])
 
     X_test = vectorizer.transform(test_feats)
     y_pred = model.predict(X_test)
