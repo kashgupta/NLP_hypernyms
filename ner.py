@@ -11,31 +11,14 @@ from sklearn.metrics import precision_recall_fscore_support
 # add to or modify any part of it.
 
 
-def getfeats(word, o):
+def getfeats(triplet):
     """ This takes the word in question and
     the offset with respect to the instance
     word """
-    o = str(o)
     features = [
         (o + 'word', word),
         # TODO: add more features here.
-
     ]
-    return features
-
-
-def word2features(triplet, i):
-    """ The function generates all features
-    for the word at position i in the
-    sentence."""
-    features = []
-    # the window around the token
-    for o in [-4,-3,-2,-1,0,1,2,3,4]:
-        if i+o >= 0 and i+o < len(sent):
-            word = sent[i+o][0]
-            featlist = getfeats(word, o)
-            features.extend(featlist)
-
     return dict(features)
 
 if __name__ == "__main__":
@@ -51,12 +34,12 @@ if __name__ == "__main__":
     train_labels = []
 
     for triplet in inputlines:
-        feats = word2features(triplet)
+        feats = getfeats(triplet)
         train_feats.append(feats)
         train_labels.append(triplet[2])
 
     #this is where ive stopped
-    
+
     vectorizer = DictVectorizer()
     X_train = vectorizer.fit_transform(train_feats)
 
