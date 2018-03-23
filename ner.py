@@ -6,6 +6,8 @@ import re
 #from syllables import count_syllables
 from sklearn.metrics import precision_recall_fscore_support
 from gensim.models import KeyedVectors
+from sklearn import svm
+
 
 # Assignment 7: NER
 # This is just to help you get going. Feel free to
@@ -60,7 +62,7 @@ def getfeats(triplet):
                 best_match = v
                 count+=1
                 if count > 2:
-                    continue
+                    break
         vector1 = vecs.get_vector(best_match)
 
     try:
@@ -76,10 +78,14 @@ def getfeats(triplet):
                 best_match = v
                 count += 1
                 if count > 2:
-                    continue
+                    break
         vector2 = vecs.get_vector(best_match)
 
-    return {'word1': vector1, 'word2': vector2}
+    dic = {'w1p' + str(i): vector1[i] for i in range(300)}
+    dic2 = {'w2p' + str(i): vector2[i] for i in range(300)}
+    for item in dic2:
+        dic[item] = dic2[item]
+    return dic
 
 if __name__ == "__main__":
     # Load the training data
@@ -118,32 +124,30 @@ if __name__ == "__main__":
     X_train = vectorizer.fit_transform(train_feats)
 
     # TODO: play with other models
-    model = Perceptron(verbose=1, max_iter=100)
+    model = Perceptron(verbose=1, max_iter=3000)
     model.fit(X_train, train_labels)
+
+    model2 = svm.SVC(kernel='rbf', verbose=1)
+    model2.fit(X_train, train_labels)
 
     test_feats = []
     test_labels = []
 
     # switch to test_sents for your final results
-    for triplet in vallines:
+    for triplet in testlines:
         feats = getfeats(triplet)
         test_feats.append(feats)
-        test_labels.append(triplet[2])
+        #test_labels.append(triplet[2])
 
     X_test = vectorizer.transform(test_feats)
-    y_pred = model.predict(X_test)
+    y_pred = model2.predict(X_test)
 
-    j = 0
     print("Writing to results.txt")
     # format is: word gold pred
-    with open("results.txt", "w") as out:
-        for sent in dev_sents:
-            for i in range(len(sent)):
-                word = sent[i][0]
-                gold = sent[i][-1]
-                pred = y_pred[j]
-                j += 1
-                out.write("{}\t{}\t{}\n".format(word,gold,pred))
-        out.write("\n")
+    with open("diy.txt", "w") as out:
+        count = 0
+        for trip in testlines:
+            out.write(trip[0] + "\t" + trip[1] + "\t" + y_pred[count] + "\n")
+            count+=1
 
     print("Now run: python conlleval.py results.txt")
