@@ -1,3 +1,4 @@
 *.xml
 .idea/NLP_hypernyms.iml
 wikipedia_sentences.txt
+GoogleNews-vectors-negative300.bin
