@@ -124,11 +124,8 @@ if __name__ == "__main__":
     X_train = vectorizer.fit_transform(train_feats)
 
     # TODO: play with other models
-    model = Perceptron(verbose=1, max_iter=3000)
+    model = Perceptron(verbose=1, max_iter=2000, penalty='l2')
     model.fit(X_train, train_labels)
-
-    model2 = svm.SVC(kernel='rbf', verbose=1)
-    model2.fit(X_train, train_labels)
 
     test_feats = []
     test_labels = []
@@ -140,7 +137,7 @@ if __name__ == "__main__":
         #test_labels.append(triplet[2])
 
     X_test = vectorizer.transform(test_feats)
-    y_pred = model2.predict(X_test)
+    y_pred = model.predict(X_test)
 
     print("Writing to results.txt")
     # format is: word gold pred
