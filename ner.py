@@ -19,12 +19,7 @@ def getfeats(word, o):
     features = [
         (o + 'word', word),
         # TODO: add more features here.
-        (o + 'capital', word[0].isupper()),
-        #(o + 'accent', "é" in word or "ó" in word or "á" in word or "ú" or "í" in word
-        # or "É" in word or "Ó" in word or "Á" in word or "Ú" or "Í" in word)
-        #(o + 'alphanum', re.match('^[\w-]+$', word) is not None),
-        #(o + 'cons', word[len(word) - 1] in 'qwrtypsdfghjklzxcvbnm')
-        #(o + 'syllables', count_syllables(word))
+
     ]
     return features
     
