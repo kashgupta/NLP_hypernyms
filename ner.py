@@ -11,6 +11,12 @@ from gensim.models import KeyedVectors
 # This is just to help you get going. Feel free to
 # add to or modify any part of it.
 
+def sub_cost(char1, char2):
+    if char1 == char2:
+        return 0
+    else:
+        return 2
+
 def edit_distance(str1, str2):
     '''Computes the minimum edit distance between the two strings.
 
@@ -40,16 +46,21 @@ def getfeats(triplet):
     """ This takes the word in question and
     the offset with respect to the instance
     word """
+    print(triplet)
     try:
         vector1 = vecs.get_vector(triplet[0])
     except KeyError:
         min_dist = 100000
         best_match = ''
+        count = 0
         for v in vecs.vocab:
             dist = edit_distance(triplet[0], v)
             if dist < min_dist:
                 min_dist = dist
                 best_match = v
+                count+=1
+                if count > 2:
+                    continue
         vector1 = vecs.get_vector(best_match)
 
     try:
@@ -57,11 +68,15 @@ def getfeats(triplet):
     except KeyError:
         min_dist = 100000
         best_match = ''
+        count = 0
         for v in vecs.vocab:
             dist = edit_distance(triplet[1], v)
             if dist < min_dist:
                 min_dist = dist
                 best_match = v
+                count += 1
+                if count > 2:
+                    continue
         vector2 = vecs.get_vector(best_match)
 
     return {'word1': vector1, 'word2': vector2}
