@@ -124,7 +124,7 @@ if __name__ == "__main__":
     X_train = vectorizer.fit_transform(train_feats)
 
     # TODO: play with other models
-    model = Perceptron(verbose=1, max_iter=2000, penalty='l2')
+    model = Perceptron(verbose=1, max_iter=2000, penalty='l2', shuffle=False)
     model.fit(X_train, train_labels)
 
     test_feats = []

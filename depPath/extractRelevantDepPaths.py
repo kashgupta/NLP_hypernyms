@@ -43,20 +43,6 @@ def extractRelevantPaths(wikideppaths, wordpairs_labels, outputfile):
                     else:
                         relevantDepPaths2counts[deppath + "\tBACKWARD"] = 1
 
-
-
-            '''
-                IMPLEMENT METHOD TO EXTRACT RELEVANT DEPEDENCY PATHS HERE
-
-                Make sure to be clear about X being a hypernym/hyponym.
-
-                Dependency Paths can be extracted in multiple different categories, such as
-                1. Forward Paths: X is hyponym, Y is hypernym
-                2. Reverse Paths: X is hypernym, Y is hyponym
-                3. Negative Paths: If this path exists, definitely not a hyper/hyponym relations
-                4. etc......
-            '''
-
     with open(outputfile, 'w') as f:
         for dep_path in relevantDepPaths2counts:
             if relevantDepPaths2counts[dep_path] >= 2:
